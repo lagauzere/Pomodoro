@@ -1,19 +1,20 @@
-let button= document.getElementById("play");
+let play= document.getElementById("play");
+let reset=document.getElementById("reset");
 let timer=document.getElementById("timer");
 
+reset.style.display='none';
 
 let travail=25;
 let pause= 5;
 
 // timer.textContent=travail+":"+sec;
 
+let bolean=0;
 
-
-
-button.addEventListener("click",()=>{
-    let temps=travail*60;
+function passerTemps(x,y){
+    let temps=x*60;
     
-    setInterval(() => {
+  let timerid=  setInterval(() => {
         let minutes = parseInt(temps / 60, 10)
         let secondes = parseInt(temps % 60, 10)
       
@@ -29,6 +30,15 @@ button.addEventListener("click",()=>{
         timer.textContent = `${minutes}:${secondes}`
         temps = temps <= 0 ? 0 : temps - 1
       }, 1000)
+      play.style.display='none';
+      reset.style.display='block';
+}
 
 
+reset.addEventListener("click",()=>{
+    location.reload();
+});
+
+play.addEventListener("click",()=>{
+    passerTemps(travail);
 });
