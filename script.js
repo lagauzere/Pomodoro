@@ -1,6 +1,7 @@
 let play= document.getElementById("play");
 let reset=document.getElementById("reset");
 let timer=document.getElementById("timer");
+timer.textContent= "";
 
 reset.style.display='none';
 
@@ -38,6 +39,7 @@ function passerTemps(x){
       }, 1000)
 
       boolean=!boolean;
+     
 }
 
 
@@ -49,16 +51,14 @@ play.addEventListener("click",()=>{
     //play.style.display='none';
    // reset.style.display='block';
    
-    
-        if (boolean==false){
-            passerTemps(travail);
-            boolean = true;
-        }
-        else if(boolean==true){
-            passerTemps(pause);
-            boolean = false;
-    
-        }
-    
-    
+            if (boolean==false){
+                passerTemps(travail);
+                boolean = true;
+            }
+            else if(boolean==true){
+                passerTemps(pause);
+                boolean = false;
+        
+            }
+           
 });
