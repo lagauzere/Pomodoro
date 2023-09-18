@@ -17,12 +17,12 @@ let temps=0;
 
 function passerTemps(){
     timer.textContent= "";
-     temps=travail*60;
-    
+    temps=travail*60;
+    travailH.style.color='white';
   let timerid =  setInterval(() => {
         let minutes = parseInt(temps / 60, 10)
         let secondes = parseInt(temps % 60, 10)
-      
+        
         // minutes = minutes < 10 ? "0" + minutes : minutes
         if (minutes<10){
             minutes="0"+minutes;
@@ -40,11 +40,11 @@ function passerTemps(){
             if (bbreak==true){
                 temps=pause*60;
                 travailH.style.color='black';
-                pauseH.style.color='green';
+                pauseH.style.color='white';
             }
             if(bbreak==false){
                 temps=travail*60;
-                travailH.style.color='green';
+                travailH.style.color='white';
                 pauseH.style.color='black';
             }
         }

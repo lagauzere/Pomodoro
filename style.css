@@ -1,0 +1,75 @@
+h1{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    height: auto;
+}
+
+body{
+    background: rgb(251,129,63);
+    background: radial-gradient(circle, rgba(251,129,63,1) 0%, rgba(252,70,70,1) 100%);
+}
+
+.container{
+    width: 150px;
+    height: 70px;
+    border-radius: 5px;
+    display: block;
+    margin-left:auto;
+    margin-right: auto;
+    background-color:#c82f2f ;
+}
+
+.travail{
+    display:block;
+    border-radius: 15px;
+    border-style: solid;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+   
+ 
+    
+}
+.pause{
+    display: block;
+    border-radius: 15px;
+    border-style: solid;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+  
+    
+}
+
+.timer {
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    line-height:80px;
+    background-color: #c9bebe;
+}
+.play{
+    display: block;
+    margin-left:auto;
+    margin-right: auto;
+    font-size: 3ch;
+    border-radius: 5px;
+    background-color:#c82f2f ;
+}
+.reset{
+    display: block;
+    margin-left:auto;
+    margin-right: auto;
+    font-size: 3ch;
+    border-radius: 5px;
+    background-color:#c82f2f ;
+}
