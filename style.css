@@ -21,6 +21,20 @@ body{
     background-color:#c82f2f ;
 }
 
+
+.container2{
+    width: 200px;
+    height: 70px;
+    border-radius: 5px;
+    display: block;
+    margin-top: 40px;
+    margin-left:auto;
+    margin-right: auto;
+    background-color:#c82f2f ;
+}
+
+
+
 .travail{
     display:block;
     border-radius: 15px;
@@ -55,7 +69,8 @@ body{
     margin-right: auto;
     text-align: center;
     line-height:80px;
-    background-color: #c9bebe;
+    background-color: transparent;
+    border-style: solid;
 }
 .play{
     display: block;
