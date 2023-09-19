@@ -28,14 +28,28 @@ displayPause.textContent = `${minutesp}:${secondesp}`;
 let bbreak=false;
 
 
-if(localStorage.getItem("travail")!==null){
-    pause=localStorage.getItem("pause");
-    travailR.value=localStorage.getItem("travail");
-}
 if(localStorage.getItem("pause")!==null){
-    travail=localStorage.getItem("travail");
+    pause=localStorage.getItem("pause");
     pauseR.value=localStorage.getItem("pause");
-   
+    Vdpause=60*pause;
+    minutesp = parseInt(Vdpause / 60, 10);
+    secondesp = parseInt(Vdpause % 60, 10);
+    if (minutesp<10){
+        minutesp="0"+minutesp;
+    }
+    if(secondesp<10){
+        secondesp="0"+secondesp;
+    }
+    displayPause.textContent = `${minutesp}:${secondesp}`;
+
+
+}
+
+
+
+if(localStorage.getItem("travail")!==null){
+    travail=localStorage.getItem("travail");
+    travailR.value=localStorage.getItem("travail");
 }
 
 let  temps=travail*60;
@@ -52,6 +66,8 @@ console.log(localStorage.getItem("travail"));
         secondes="0"+secondes;
     }
     timer.textContent = `${minutes}:${secondes}`;
+
+
 
 travailR.addEventListener("input",()=>{
     localStorage.setItem("travail",travailR.value);
@@ -103,7 +119,7 @@ reset.style.display='none';
 function passerTemps(){
 
    
-    travailH.style.color='#a9ff8a';
+travailH.style.color='#a9ff8a';
   let timerid =  setInterval(() => {
         let minutes = parseInt(temps / 60, 10)
         let secondes = parseInt(temps % 60, 10)
