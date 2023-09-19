@@ -3,6 +3,18 @@ let reset=document.getElementById("reset");
 let timer=document.getElementById("timer");
 let travailH=document.getElementById("travail");
 let pauseH=document.getElementById("pause");
+let travailR=document.getElementById("travailRange");
+let pauseR=document.getElementById("pauseRange");
+
+
+travailR.addEventListener("input",()=>{
+    console.log(travailR.value);
+
+});
+
+
+
+
 timer.textContent= "";
 
 reset.style.display='none';
