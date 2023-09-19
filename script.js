@@ -1,3 +1,5 @@
+
+//declaration des variables d'aplications
 let play= document.getElementById("play");
 let reset=document.getElementById("reset");
 let timer=document.getElementById("timer");
@@ -9,9 +11,13 @@ let options=document.getElementById("options");
 let displayPause=document.getElementById("vpause");
 let travail=25;
 let pause= 5;
+let bbreak=false;
 
 
+reset.style.display='none';//le bouton reset est caché jusqu'à ce que l'utilisateur lance le chrono
 
+
+//affichage du temps de la pause en minute:seconde
 let Vdpause=60*pause;
 let minutesp = parseInt(Vdpause / 60, 10);
 let secondesp = parseInt(Vdpause % 60, 10);
@@ -23,11 +29,7 @@ if(secondesp<10){
 }
 displayPause.textContent = `${minutesp}:${secondesp}`;
 
-
-
-let bbreak=false;
-
-
+//recuperation des variables locales du temps de travail et du temps de pause
 if(localStorage.getItem("pause")!==null){
     pause=localStorage.getItem("pause");
     pauseR.value=localStorage.getItem("pause");
@@ -45,17 +47,13 @@ if(localStorage.getItem("pause")!==null){
 
 }
 
-
-
 if(localStorage.getItem("travail")!==null){
     travail=localStorage.getItem("travail");
     travailR.value=localStorage.getItem("travail");
 }
 
-let  temps=travail*60;
+let  temps=travail*60;//declaration de la variable temps 
 
-console.log(localStorage.getItem("pause"));
-console.log(localStorage.getItem("travail"));
 
     let minutes = parseInt(temps / 60, 10)
     let secondes = parseInt(temps % 60, 10)
@@ -66,9 +64,12 @@ console.log(localStorage.getItem("travail"));
         secondes="0"+secondes;
     }
     timer.textContent = `${minutes}:${secondes}`;
+    //affichage du temps dans le timer centrale
 
 
 
+
+    //récupération des valeurs des ranges  (de base ces valeurs sont 25 pour le travail et 5 pour la pause sauf si il y a des variables locales)
 travailR.addEventListener("input",()=>{
     localStorage.setItem("travail",travailR.value);
     travail=travailR.value
@@ -85,7 +86,6 @@ travailR.addEventListener("input",()=>{
 
 
 });
-
 
 pauseR.addEventListener("input",()=>{
     localStorage.setItem("pause",pauseR.value);
@@ -106,16 +106,7 @@ pauseR.addEventListener("input",()=>{
 
 
 
-
-
-
-reset.style.display='none';
-
-
-// timer.textContent=travail+":"+sec;
-
-
-
+//cette fonction fait defiler le temps du timer 
 function passerTemps(){
 
    
@@ -124,11 +115,11 @@ travailH.style.color='#a9ff8a';
         let minutes = parseInt(temps / 60, 10)
         let secondes = parseInt(temps % 60, 10)
         
-        // minutes = minutes < 10 ? "0" + minutes : minutes
+       
         if (minutes<10){
             minutes="0"+minutes;
         }
-        // secondes = secondes < 10 ? "0" + secondes : secondes
+        
         if(secondes<10){
             secondes="0"+secondes;
         }
@@ -153,11 +144,13 @@ travailH.style.color='#a9ff8a';
       }, 1000)
 }
 
-
+//quand le bouton reload est clické, la page est rechargé 
 reset.addEventListener("click",()=>{
     location.reload();
 });
 
+
+//quand le bouton play est cliqué, il est remplacé par le bouton reset et le compteur est lancé.
 play.addEventListener("click",()=>{
     options.style.display='none';
     play.style.display='none';
