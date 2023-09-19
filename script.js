@@ -5,26 +5,44 @@ let travailH=document.getElementById("travail");
 let pauseH=document.getElementById("pause");
 let travailR=document.getElementById("travailRange");
 let pauseR=document.getElementById("pauseRange");
-
-
-travailR.addEventListener("input",()=>{
-    console.log(travailR.value);
-
-});
-
-
-
-
-timer.textContent= "";
-
-reset.style.display='none';
-
+let options=document.getElementById("options");
+let displayPause=document.getElementById("vpause");
 let travail=25;
 let pause= 5;
-// timer.textContent=travail+":"+sec;
+
+
+
+let Vdpause=60*pause;
+let minutesp = parseInt(Vdpause / 60, 10);
+let secondesp = parseInt(Vdpause % 60, 10);
+if (minutesp<10){
+    minutesp="0"+minutesp;
+}
+if(secondesp<10){
+    secondesp="0"+secondesp;
+}
+displayPause.textContent = `${minutesp}:${secondesp}`;
+
+
 
 let bbreak=false;
+
+
+if(localStorage.getItem("travail")!==null){
+    pause=localStorage.getItem("pause");
+    travailR.value=localStorage.getItem("travail");
+}
+if(localStorage.getItem("pause")!==null){
+    travail=localStorage.getItem("travail");
+    pauseR.value=localStorage.getItem("pause");
+   
+}
+
 let  temps=travail*60;
+
+console.log(localStorage.getItem("pause"));
+console.log(localStorage.getItem("travail"));
+
     let minutes = parseInt(temps / 60, 10)
     let secondes = parseInt(temps % 60, 10)
     if (minutes<10){
@@ -34,6 +52,53 @@ let  temps=travail*60;
         secondes="0"+secondes;
     }
     timer.textContent = `${minutes}:${secondes}`;
+
+travailR.addEventListener("input",()=>{
+    localStorage.setItem("travail",travailR.value);
+    travail=travailR.value
+    temps=travail*60;
+    minutes = parseInt(temps / 60, 10)
+    secondes = parseInt(temps % 60, 10)
+    if (minutes<10){
+        minutes="0"+minutes;
+    }
+    if(secondes<10){
+        secondes="0"+secondes;
+    }
+    timer.textContent = `${minutes}:${secondes}`;
+
+
+});
+
+
+pauseR.addEventListener("input",()=>{
+    localStorage.setItem("pause",pauseR.value);
+    
+    pause=pauseR.value
+   
+    Vdpause=60*pause;
+    minutesp = parseInt(Vdpause / 60, 10);
+    secondesp = parseInt(Vdpause % 60, 10);
+    if (minutesp<10){
+        minutesp="0"+minutesp;
+    }
+    if(secondesp<10){
+        secondesp="0"+secondesp;
+    }
+    displayPause.textContent = `${minutesp}:${secondesp}`;
+});
+
+
+
+
+
+
+reset.style.display='none';
+
+
+// timer.textContent=travail+":"+sec;
+
+
 
 function passerTemps(){
 
@@ -78,7 +143,9 @@ reset.addEventListener("click",()=>{
 });
 
 play.addEventListener("click",()=>{
+    options.style.display='none';
     play.style.display='none';
-   reset.style.display='block';
+    reset.style.display='block';
+   
           passerTemps();
 });
