@@ -1,9 +1,14 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Mooli&display=swap');
+
+   
 h1{
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 150px;
+    text-align: center;
     height: auto;
+    font-family: 'Lobster',sans-serif;
+    font-size: 6ch;
 }
 
 body{
@@ -12,25 +17,25 @@ body{
 }
 
 .container{
-    width: 150px;
-    height: 70px;
+    width: 200px;
+    height: auto;
     border-radius: 5px;
     display: block;
     margin-left:auto;
     margin-right: auto;
-    background-color:#c82f2f ;
+    background-color:#8a0000 ;
 }
 
 
 .container2{
     width: 200px;
-    height: 70px;
+    height: auto;
     border-radius: 5px;
     display: block;
     margin-top: 40px;
     margin-left:auto;
     margin-right: auto;
-    background-color:#c82f2f ;
+    background-color:#8a0000 ;
 }
 
 
@@ -43,10 +48,11 @@ body{
     margin-left: 10px;
     margin-right: 10px;
     text-align: center;
-   
- 
-    
+    color: white;
+    font-size: 4ch;
+    font-family: 'Mooli',sans-serif;
 }
+
 .pause{
     display: block;
     border-radius: 15px;
@@ -55,36 +61,46 @@ body{
     margin-left: 10px;
     margin-right: 10px;
     text-align: center;
-  
-    
+    color: white;
+    font-size: 4ch;
+    font-family: 'Mooli',sans-serif;
 }
 
 .timer {
-    width: 80px;
-    height: 80px;
-    border-radius: 80px;
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
     margin-top: 30px;
     margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    line-height:80px;
+    line-height:200px;
     background-color: transparent;
     border-style: solid;
+    font-family: 'Mooli',sans-serif;
+    font-size: 8ch;
+    border-width: 5px;
 }
+
 .play{
     display: block;
     margin-left:auto;
     margin-right: auto;
-    font-size: 3ch;
+    font-size: 5ch;
     border-radius: 5px;
-    background-color:#c82f2f ;
+    background-color:#8a0000 ;
+    color: white;
+    font-family: 'Mooli',sans-serif;
 }
 .reset{
     display: block;
     margin-left:auto;
     margin-right: auto;
-    font-size: 3ch;
+    font-size: 5ch;
     border-radius: 5px;
-    background-color:#c82f2f ;
+    background-color:#8a0000 ;
+    color: white;
+    font-family: 'Mooli',sans-serif;
+
 }

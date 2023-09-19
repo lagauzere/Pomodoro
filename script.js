@@ -7,18 +7,26 @@ timer.textContent= "";
 
 reset.style.display='none';
 
-let travail=0.2;
-let pause= 0.1;
-
+let travail=25;
+let pause= 5;
 // timer.textContent=travail+":"+sec;
 
 let bbreak=false;
-let temps=0;
+let  temps=travail*60;
+    let minutes = parseInt(temps / 60, 10)
+    let secondes = parseInt(temps % 60, 10)
+    if (minutes<10){
+        minutes="0"+minutes;
+    }
+    if(secondes<10){
+        secondes="0"+secondes;
+    }
+    timer.textContent = `${minutes}:${secondes}`;
 
 function passerTemps(){
-    timer.textContent= "";
-    temps=travail*60;
-    travailH.style.color='white';
+
+   
+    travailH.style.color='#a9ff8a';
   let timerid =  setInterval(() => {
         let minutes = parseInt(temps / 60, 10)
         let secondes = parseInt(temps % 60, 10)
@@ -39,13 +47,13 @@ function passerTemps(){
             bbreak=!bbreak;
             if (bbreak==true){
                 temps=pause*60;
-                travailH.style.color='black';
-                pauseH.style.color='white';
+                travailH.style.color='white';
+                pauseH.style.color='#a9ff8a';
             }
             if(bbreak==false){
                 temps=travail*60;
-                travailH.style.color='white';
-                pauseH.style.color='black';
+                travailH.style.color='#a9ff8a';
+                pauseH.style.color='white';
             }
         }
 
